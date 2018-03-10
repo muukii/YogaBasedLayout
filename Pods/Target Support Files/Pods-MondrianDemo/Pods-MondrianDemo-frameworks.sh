@@ -104,13 +104,21 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework"
   install_framework "${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework"
   install_framework "${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

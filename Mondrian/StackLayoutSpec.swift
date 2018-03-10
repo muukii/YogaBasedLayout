@@ -151,20 +151,13 @@ extension FlexWrap {
 //  }
 //}
 
-public struct StackLayoutSpec : LayoutSpec {
+public struct StackLayoutSpec : LayoutSpecInternal {
 
   let view = LayoutNode()
 
-  public var style: LayoutElementStyle {
-    get {
-      return view.style
-    }
-    set {
-      view.style = newValue
-    }
-  }
-
   public let direction: FlexDirection
+
+  public let spacing: CGFloat
 
   public let justifyContent: JustifyContent
 
@@ -176,6 +169,7 @@ public struct StackLayoutSpec : LayoutSpec {
 
   public init(
     direction: FlexDirection,
+    spacing: CGFloat,
     justifyContent: JustifyContent,
     alignItems: AlignItems,
     flexWrap: FlexWrap,
@@ -183,6 +177,7 @@ public struct StackLayoutSpec : LayoutSpec {
     ) {
 
     self.direction = direction
+    self.spacing = spacing
     self.justifyContent = justifyContent
     self.alignItems = alignItems
     self.flexWrap = flexWrap
@@ -191,6 +186,8 @@ public struct StackLayoutSpec : LayoutSpec {
   }
 
   public func layout(target: Node) -> Node {
+
+    target.yoga.isEnabled = true
 
     target.addSubview(view)
 
@@ -202,17 +199,18 @@ public struct StackLayoutSpec : LayoutSpec {
       layout.flexWrap = self.flexWrap.yogaValue
     }
 
-    for child in children {
-      let node = child.layout(target: view)
-      view.addSubview(node)
+    let nodes = children.map {
+      $0.layout(target: view)
     }
+
+    nodes.dropLast().forEach {
+      $0.style.margin.bottom = spacing
+    }
+
+    nodes.forEach(view.addSubview)
 
     return view
 
   }
 
-  public func calculateLayout() {
-
-  }
-  
 }

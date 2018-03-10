@@ -20,6 +20,7 @@ target 'MondrianDemo' do
   use_frameworks!
 
   yoga
+  pod 'Texture'
   pod 'Then'
   pod 'Reveal-SDK'
   # Pods for MondrianDemo

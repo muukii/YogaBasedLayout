@@ -1,5 +1,27 @@
 PODS:
+  - PINCache (3.0.1-beta.6):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
+    - PINCache/Core (= 3.0.1-beta.6)
+  - PINCache/Arc-exception-safe (3.0.1-beta.6):
+    - PINCache/Core
+  - PINCache/Core (3.0.1-beta.6):
+    - PINOperation (~> 1.1.0)
+  - PINOperation (1.1.1)
+  - PINRemoteImage/Core (3.0.0-beta.13):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.0-beta.13):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.0-beta.13):
+    - PINCache (= 3.0.1-beta.6)
+    - PINRemoteImage/Core
   - Reveal-SDK (13)
+  - Texture (2.6):
+    - Texture/PINRemoteImage (= 2.6)
+  - Texture/Core (2.6)
+  - Texture/PINRemoteImage (2.6):
+    - PINRemoteImage/iOS (= 3.0.0-beta.13)
+    - PINRemoteImage/PINCache
+    - Texture/Core
   - Then (2.3.0)
   - Yoga (1.8.0)
   - YogaKit (1.8.0):
@@ -7,6 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - Reveal-SDK
+  - Texture
   - Then
   - Yoga (from `https://github.com/a2/yoga.git`, tag `podspec-1.8.0`)
   - YogaKit (from `https://github.com/a2/yoga.git`, tag `podspec-1.8.0`)
@@ -28,11 +51,15 @@ CHECKOUT OPTIONS:
     :tag: podspec-1.8.0
 
 SPEC CHECKSUMS:
+  PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
+  PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
+  PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
+  Texture: 7249074582daf75e524e59df5428b66b8e8db0e4
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
   Yoga: 24929b12cc17b3ddf6dba4a9470d8e86c18c0018
   YogaKit: ce0fc50a06f08a1374d83049f395e45ecb11ecc0
 
-PODFILE CHECKSUM: d04d286a14a4e1358da6b9442491f8dba24e7922
+PODFILE CHECKSUM: 8ddd680749b9e49f430b19443f10aae0699ebba6
 
 COCOAPODS: 1.3.1

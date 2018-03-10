@@ -10,18 +10,9 @@ import Foundation
 
 import YogaKit
 
-public struct InsetLayoutSpec : LayoutSpec {
+public struct InsetLayoutSpec : LayoutSpecInternal {
 
   let view = LayoutNode()
-
-  public var style: LayoutElementStyle {
-    get {
-      return view.style
-    }
-    set {
-      view.style = newValue
-    }
-  }
 
   public let insets: UIEdgeInsets
 
@@ -30,6 +21,8 @@ public struct InsetLayoutSpec : LayoutSpec {
   public init(insets: UIEdgeInsets, child: LayoutElement) {
     self.insets = insets
     self.child = child
+
+    self.style.margin = insets
   }
 
   public func layout(target: Node) -> Node {
@@ -37,11 +30,7 @@ public struct InsetLayoutSpec : LayoutSpec {
     target.yoga.isEnabled = true
 
     view.configureLayout { (layout) in
-      self.style.apply(to: layout)
-      layout.marginTop = YGValue(self.insets.top)
-      layout.marginRight = YGValue(self.insets.right)
-      layout.marginBottom = YGValue(self.insets.bottom)
-      layout.marginLeft = YGValue(self.insets.left)
+      self.style.apply(to: layout)      
     }
 
     target.addSubview(view)

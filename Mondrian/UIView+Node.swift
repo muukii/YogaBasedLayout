@@ -41,6 +41,8 @@ extension Node {
 
   public func relayout(layoutMode: LayoutMode = .currentSize) {
 
+    yoga.isEnabled = true
+
     switch layoutMode {
     case .currentSize:
       yoga.applyLayout(
@@ -72,7 +74,7 @@ extension Node : LayoutElement {
       self.style.apply(to: layout)
     }
 
-    if let spec = (self as? LayoutView)?.layoutSpec() {
+    if let spec = (self as? UIView & LayoutView)?.layoutSpec() {
 
       return spec.layout(target: self)
 
@@ -83,14 +85,14 @@ extension Node : LayoutElement {
   
 }
 
-public final class LayoutNode : UIView {
+final class LayoutNode : UIView {
 
-  public override init(frame: CGRect) {
+  override init(frame: CGRect) {
     super.init(frame: frame)
     self.yoga.isEnabled = true
   }
 
-  public required init?(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 }

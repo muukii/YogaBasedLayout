@@ -16,13 +16,18 @@
 		4B386D05205124AB00E6E0B7 /* LayoutElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D04205124AB00E6E0B7 /* LayoutElement.swift */; };
 		4B386D072051532100E6E0B7 /* LayoutElementStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D062051532100E6E0B7 /* LayoutElementStyle.swift */; };
 		4B936C182053C54900D1F203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B936C172053C54900D1F203 /* AppDelegate.swift */; };
-		4B936C1A2053C54A00D1F203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B936C192053C54A00D1F203 /* ViewController.swift */; };
+		4B936C1A2053C54A00D1F203 /* ProfileCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */; };
 		4B936C1D2053C54A00D1F203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B936C1B2053C54A00D1F203 /* Main.storyboard */; };
 		4B936C1F2053C54A00D1F203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B936C1E2053C54A00D1F203 /* Assets.xcassets */; };
 		4B936C222053C54A00D1F203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B936C202053C54A00D1F203 /* LaunchScreen.storyboard */; };
 		4B936C272053C55500D1F203 /* Mondrian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B386CE720511FB600E6E0B7 /* Mondrian.framework */; };
 		4B936C282053C55500D1F203 /* Mondrian.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B386CE720511FB600E6E0B7 /* Mondrian.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B99143C2053C0DD0034BB04 /* Mondrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B99143B2053C0DD0034BB04 /* Mondrian.swift */; };
+		4BB6431E20542A84007890BC /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB6431D20542A84007890BC /* PlaygroundViewController.swift */; };
+		4BB6432020542A8E007890BC /* PlaygroundTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB6431F20542A8E007890BC /* PlaygroundTextureViewController.swift */; };
+		4BB64321205432EA007890BC /* WrapperLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D002051246600E6E0B7 /* WrapperLayoutSpec.swift */; };
+		4BB6432220543E28007890BC /* OverlayLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CFE2051242D00E6E0B7 /* OverlayLayoutSpec.swift */; };
+		4BB6432320544095007890BC /* BackgorundLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CFC2051242100E6E0B7 /* BackgorundLayoutSpec.swift */; };
 		61321B1F52FDEB02306703C9 /* Pods_Mondrian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2ACA5553812A5ADB9D2B5E /* Pods_Mondrian.framework */; };
 		7335C42C73713E0DF2C7FC4E /* Pods_MondrianDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4373DFB5D04B3EA8606BE05A /* Pods_MondrianDemo.framework */; };
 /* End PBXBuildFile section */
@@ -73,12 +78,14 @@
 		4B386D062051532100E6E0B7 /* LayoutElementStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutElementStyle.swift; sourceTree = "<group>"; };
 		4B936C152053C54900D1F203 /* MondrianDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MondrianDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B936C172053C54900D1F203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B936C192053C54A00D1F203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardViewController.swift; sourceTree = "<group>"; };
 		4B936C1C2053C54A00D1F203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B936C1E2053C54A00D1F203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B936C212053C54A00D1F203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B936C232053C54A00D1F203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B99143B2053C0DD0034BB04 /* Mondrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mondrian.swift; sourceTree = "<group>"; };
+		4BB6431D20542A84007890BC /* PlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
+		4BB6431F20542A8E007890BC /* PlaygroundTextureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundTextureViewController.swift; sourceTree = "<group>"; };
 		6C2ACA5553812A5ADB9D2B5E /* Pods_Mondrian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mondrian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994621DF4545293E92CBD980 /* Pods-Mondrian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mondrian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mondrian/Pods-Mondrian.debug.xcconfig"; sourceTree = "<group>"; };
 		C3174F22AD19702758AC39CF /* Pods-MondrianDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MondrianDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MondrianDemo/Pods-MondrianDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				4B936C172053C54900D1F203 /* AppDelegate.swift */,
-				4B936C192053C54A00D1F203 /* ViewController.swift */,
+				4BB6431D20542A84007890BC /* PlaygroundViewController.swift */,
+				4BB6431F20542A8E007890BC /* PlaygroundTextureViewController.swift */,
+				4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */,
 				4B936C1B2053C54A00D1F203 /* Main.storyboard */,
 				4B936C1E2053C54A00D1F203 /* Assets.xcassets */,
 				4B936C202053C54A00D1F203 /* LaunchScreen.storyboard */,
@@ -330,14 +339,22 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MondrianDemo/Pods-MondrianDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 				"${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YogaKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,8 +422,11 @@
 				4B28D5E52053A6530002841C /* CALayer+LayoutElement.swift in Sources */,
 				4B386D032051247300E6E0B7 /* LayoutSpec.swift in Sources */,
 				4B1154722053D4FB000D34CC /* InsetLayoutSpec.swift in Sources */,
+				4BB6432220543E28007890BC /* OverlayLayoutSpec.swift in Sources */,
 				4B386D072051532100E6E0B7 /* LayoutElementStyle.swift in Sources */,
+				4BB64321205432EA007890BC /* WrapperLayoutSpec.swift in Sources */,
 				4B386CF920511FF400E6E0B7 /* StackLayoutSpec.swift in Sources */,
+				4BB6432320544095007890BC /* BackgorundLayoutSpec.swift in Sources */,
 				4B99143C2053C0DD0034BB04 /* Mondrian.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,8 +435,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B936C1A2053C54A00D1F203 /* ViewController.swift in Sources */,
+				4B936C1A2053C54A00D1F203 /* ProfileCardViewController.swift in Sources */,
+				4BB6432020542A8E007890BC /* PlaygroundTextureViewController.swift in Sources */,
 				4B936C182053C54900D1F203 /* AppDelegate.swift in Sources */,
+				4BB6431E20542A84007890BC /* PlaygroundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

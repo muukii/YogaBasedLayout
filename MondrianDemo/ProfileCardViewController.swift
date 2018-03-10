@@ -10,26 +10,7 @@ import UIKit
 
 import Mondrian
 
-enum Factory {
-
-  static func box(color: UIColor) -> UIView {
-
-    let box = UIView()
-    box.backgroundColor = color
-    return box
-  }
-
-  static func elasticLabel(text: String) -> UILabel {
-
-    let label = UILabel()
-    label.text = text
-    label.numberOfLines = 0
-
-    return label
-  }
-}
-
-class ViewController: UIViewController {
+class ProfileCardViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -62,6 +43,7 @@ class ViewController: UIViewController {
           insets: .init(top: 4, left: 4, bottom: 4, right: 4),
           child: StackLayoutSpec(
             direction: .horizontal,
+            spacing: 0,
             justifyContent: .start,
             alignItems: .center,
             flexWrap: .noWrap,
@@ -125,6 +107,7 @@ class ProfileView : UIView, LayoutView {
       insets: .init(top: 10, left: 10, bottom: 10, right: 10),
       child: StackLayoutSpec(
         direction: .vertical,
+        spacing: 0,
         justifyContent: .start,
         alignItems: .start,
         flexWrap: .noWrap,

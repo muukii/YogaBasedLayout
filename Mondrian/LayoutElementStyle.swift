@@ -85,6 +85,8 @@ public struct LayoutElementStyle {
 
   public var flexShrink: CGFloat = 0
 
+  public var margin: UIEdgeInsets = .zero
+
   func apply(to layout: YGLayout) {
 
     layout.width = width.yogaValue
@@ -97,7 +99,11 @@ public struct LayoutElementStyle {
 
     layout.flexGrow = flexGrow
     layout.flexShrink = flexShrink
-    
+
+    layout.marginTop = YGValue(margin.top)
+    layout.marginRight = YGValue(margin.right)
+    layout.marginBottom = YGValue(margin.bottom)
+    layout.marginLeft = YGValue(margin.left)
   }
 
 }
