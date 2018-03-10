@@ -1,0 +1,38 @@
+PODS:
+  - Reveal-SDK (13)
+  - Then (2.3.0)
+  - Yoga (1.8.0)
+  - YogaKit (1.8.0):
+    - Yoga (~> 1.8)
+
+DEPENDENCIES:
+  - Reveal-SDK
+  - Then
+  - Yoga (from `https://github.com/a2/yoga.git`, tag `podspec-1.8.0`)
+  - YogaKit (from `https://github.com/a2/yoga.git`, tag `podspec-1.8.0`)
+
+EXTERNAL SOURCES:
+  Yoga:
+    :git: https://github.com/a2/yoga.git
+    :tag: podspec-1.8.0
+  YogaKit:
+    :git: https://github.com/a2/yoga.git
+    :tag: podspec-1.8.0
+
+CHECKOUT OPTIONS:
+  Yoga:
+    :git: https://github.com/a2/yoga.git
+    :tag: podspec-1.8.0
+  YogaKit:
+    :git: https://github.com/a2/yoga.git
+    :tag: podspec-1.8.0
+
+SPEC CHECKSUMS:
+  Reveal-SDK: ccc2b0f8014965ea448b7534a7c2c8da232b75e8
+  Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
+  Yoga: 24929b12cc17b3ddf6dba4a9470d8e86c18c0018
+  YogaKit: ce0fc50a06f08a1374d83049f395e45ecb11ecc0
+
+PODFILE CHECKSUM: d04d286a14a4e1358da6b9442491f8dba24e7922
+
+COCOAPODS: 1.3.1
