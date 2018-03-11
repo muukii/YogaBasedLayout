@@ -30,6 +30,8 @@
 		4BB6432320544095007890BC /* BackgorundLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CFC2051242100E6E0B7 /* BackgorundLayoutSpec.swift */; };
 		4BB643252054698E007890BC /* RelativeLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CF620511FED00E6E0B7 /* RelativeLayoutSpec.swift */; };
 		4BB6432620546FFF007890BC /* CenterLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CFA2051240B00E6E0B7 /* CenterLayoutSpec.swift */; };
+		4BB643282055580A007890BC /* MondrianView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB643272055580A007890BC /* MondrianView.swift */; };
+		4BDE082F205561120035F74F /* EntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE082E205561120035F74F /* EntryPoint.swift */; };
 		61321B1F52FDEB02306703C9 /* Pods_Mondrian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2ACA5553812A5ADB9D2B5E /* Pods_Mondrian.framework */; };
 		7335C42C73713E0DF2C7FC4E /* Pods_MondrianDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4373DFB5D04B3EA8606BE05A /* Pods_MondrianDemo.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +90,8 @@
 		4B99143B2053C0DD0034BB04 /* Mondrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mondrian.swift; sourceTree = "<group>"; };
 		4BB6431D20542A84007890BC /* PlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
 		4BB6431F20542A8E007890BC /* PlaygroundTextureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundTextureViewController.swift; sourceTree = "<group>"; };
+		4BB643272055580A007890BC /* MondrianView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondrianView.swift; sourceTree = "<group>"; };
+		4BDE082E205561120035F74F /* EntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPoint.swift; sourceTree = "<group>"; };
 		6C2ACA5553812A5ADB9D2B5E /* Pods_Mondrian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mondrian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994621DF4545293E92CBD980 /* Pods-Mondrian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mondrian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mondrian/Pods-Mondrian.debug.xcconfig"; sourceTree = "<group>"; };
 		C3174F22AD19702758AC39CF /* Pods-MondrianDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MondrianDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MondrianDemo/Pods-MondrianDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				4B386CFC2051242100E6E0B7 /* BackgorundLayoutSpec.swift */,
 				4B386CFE2051242D00E6E0B7 /* OverlayLayoutSpec.swift */,
 				4B386D002051246600E6E0B7 /* WrapperLayoutSpec.swift */,
+				4BDE082E205561120035F74F /* EntryPoint.swift */,
+				4BB643272055580A007890BC /* MondrianView.swift */,
 				4B28D5E22053A6250002841C /* UIView+Node.swift */,
 				4B28D5E42053A6530002841C /* CALayer+LayoutElement.swift */,
 			);
@@ -420,11 +426,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB643252054698E007890BC /* RelativeLayoutSpec.swift in Sources */,
+				4BDE082F205561120035F74F /* EntryPoint.swift in Sources */,
 				4B28D5E32053A6250002841C /* UIView+Node.swift in Sources */,
 				4B386D05205124AB00E6E0B7 /* LayoutElement.swift in Sources */,
 				4B28D5E52053A6530002841C /* CALayer+LayoutElement.swift in Sources */,
 				4B386D032051247300E6E0B7 /* LayoutSpec.swift in Sources */,
 				4B1154722053D4FB000D34CC /* InsetLayoutSpec.swift in Sources */,
+				4BB643282055580A007890BC /* MondrianView.swift in Sources */,
 				4BB6432220543E28007890BC /* OverlayLayoutSpec.swift in Sources */,
 				4B386D072051532100E6E0B7 /* LayoutElementStyle.swift in Sources */,
 				4BB64321205432EA007890BC /* WrapperLayoutSpec.swift in Sources */,

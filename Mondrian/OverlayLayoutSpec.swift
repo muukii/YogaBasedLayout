@@ -21,11 +21,11 @@ public struct OverlayLayoutSpec : LayoutSpec {
     self.overlay = overlay
   }
 
-  public func layout(target: Node) -> Node {
+  public func defineLayout(target: Node) -> Node {
 
     target.yoga.isEnabled = true
 
-    let overlayNode = overlay.layout(target: target)
+    let overlayNode = overlay.defineLayout(target: target)
 
     overlayNode.configureLayout { (layout) in
       layout.position = .absolute
@@ -33,7 +33,7 @@ public struct OverlayLayoutSpec : LayoutSpec {
       layout.height = YGValue.init(value: 100, unit: .percent)
     }
 
-    let childNode = child.layout(target: target)
+    let childNode = child.defineLayout(target: target)
     childNode.addSubview(overlayNode)
 
     return target

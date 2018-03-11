@@ -14,11 +14,6 @@ public protocol LayoutElement {
   ///
   /// - Parameter target: Target
   /// - Returns: Return new Node if itself create (??)
-  func layout(target: Node) -> Node
+  func defineLayout(target: Node) -> Node
 
-}
-
-public protocol LayoutView {
-
-  func layoutSpec() -> LayoutSpec
 }

@@ -22,12 +22,12 @@ public struct WrapperLayoutSpec : LayoutSpec {
     self.children = children
   }
 
-  public func layout(target: Node) -> Node {
+  public func defineLayout(target: Node) -> Node {
 
     target.yoga.isEnabled = true
 
     let nodes = children.map {
-      $0.layout(target: target)
+      $0.defineLayout(target: target)
     }
 
     nodes.forEach {

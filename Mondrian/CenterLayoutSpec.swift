@@ -39,8 +39,8 @@ public struct CenterLayoutSpec : LayoutSpec {
     )
   }
 
-  public func layout(target: Node) -> Node {
+  public func defineLayout(target: Node) -> Node {
 
-    return relativeLayout.layout(target: target)
+    return relativeLayout.defineLayout(target: target)
   }
 }

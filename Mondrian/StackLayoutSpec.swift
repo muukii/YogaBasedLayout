@@ -172,7 +172,8 @@ public struct StackLayoutSpec : LayoutSpec {
     spacing: CGFloat,
     justifyContent: JustifyContent,
     alignItems: AlignItems,
-    flexWrap: FlexWrap,
+    flexWrap: FlexWrap = .noWrap,
+    styled: (inout LayoutElementStyle) -> Void = { _ in },
     children: [LayoutElement]
     ) {
 
@@ -183,9 +184,10 @@ public struct StackLayoutSpec : LayoutSpec {
     self.flexWrap = flexWrap
     self.children = children
 
+    styled(&self.style)
   }
 
-  public func layout(target: Node) -> Node {
+  public func defineLayout(target: Node) -> Node {
 
     // Can optimize
     // Should reduce useless UIView
@@ -206,7 +208,7 @@ public struct StackLayoutSpec : LayoutSpec {
     }
 
     let nodes = children.map {
-      $0.layout(target: target)
+      $0.defineLayout(target: target)
     }
 
     nodes.dropLast().forEach {

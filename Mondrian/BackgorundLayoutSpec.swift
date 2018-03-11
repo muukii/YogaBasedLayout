@@ -21,11 +21,11 @@ public struct BackgroundLayoutSpec : LayoutSpec {
     self.background = background
   }
 
-  public func layout(target: Node) -> Node {
+  public func defineLayout(target: Node) -> Node {
 
     target.yoga.isEnabled = true
 
-    let _background = background.layout(target: target)
+    let _background = background.defineLayout(target: target)
 
     _background.configureLayout { (layout) in
       layout.position = .absolute
@@ -34,7 +34,7 @@ public struct BackgroundLayoutSpec : LayoutSpec {
     }
 
     target.addSubview(_background)
-    target.addSubview(child.layout(target: target))
+    target.addSubview(child.defineLayout(target: target))
 
     return target
   }

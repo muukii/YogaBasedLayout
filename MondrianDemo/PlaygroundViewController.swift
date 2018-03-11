@@ -40,7 +40,7 @@ class PlaygroundViewController : UIViewController {
     view.frame.origin.y = 100
     view.frame.size = .init(width: 300, height: 300)
 
-    view.layout(target: view)
+    view.defineLayout(target: view)
 
     self.view.addSubview(view)
 
@@ -54,7 +54,7 @@ class PlaygroundViewController : UIViewController {
 
 extension PlaygroundViewController {
 
-  class RootView : UIView, LayoutView {
+  class RootView : UIView, MondrianViewType {
 
     let boxes1: [UIView] = (0..<5).map { _ in
       UIView()

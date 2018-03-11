@@ -21,6 +21,11 @@ public enum LayoutMode {
 }
 
 extension Node {
+
+  public func styled(_ apply:(inout LayoutElementStyle) -> Void) -> Self {
+    apply(&style)
+    return self
+  }
   
   public var style: LayoutElementStyle {
     get {
@@ -64,7 +69,7 @@ extension Node {
 
 extension Node : LayoutElement {
 
-  public final func layout(target: Node) -> Node {
+  public final func defineLayout(target: Node) -> Node {
 
     yoga.isEnabled = true
 
@@ -72,9 +77,9 @@ extension Node : LayoutElement {
       self.style.apply(to: layout)
     }
 
-    if let spec = (self as? UIView & LayoutView)?.layoutSpec() {
+    if let spec = (self as? UIView & MondrianViewType)?.layoutSpec() {
 
-      return spec.layout(target: self)
+      return spec.defineLayout(target: self)
 
     } else {
       return self

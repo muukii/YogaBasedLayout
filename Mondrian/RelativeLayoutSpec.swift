@@ -36,11 +36,11 @@ public struct RelativeLayoutSpec : LayoutSpec {
 
   }
 
-  public func layout(target: Node) -> Node {
+  public func defineLayout(target: Node) -> Node {
 
     target.yoga.isEnabled = true
 
-    let node = child.layout(target: target)
+    let node = child.defineLayout(target: target)
 
     target.configureLayout { (layout) in
       layout.flexDirection = .column
