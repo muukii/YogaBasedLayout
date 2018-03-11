@@ -10,9 +10,7 @@ import Foundation
 
 import YogaKit
 
-public struct InsetLayoutSpec : LayoutSpecInternal {
-
-  let view = LayoutNode()
+public struct InsetLayoutSpec : LayoutSpec {
 
   public let insets: UIEdgeInsets
 
@@ -21,25 +19,49 @@ public struct InsetLayoutSpec : LayoutSpecInternal {
   public init(insets: UIEdgeInsets, child: LayoutElement) {
     self.insets = insets
     self.child = child
-
-    self.style.margin = insets
   }
 
   public func layout(target: Node) -> Node {
 
-    target.yoga.isEnabled = true
-
-    view.configureLayout { (layout) in
-      self.style.apply(to: layout)      
-    }
+    let view = LayoutNode()
 
     target.addSubview(view)
 
-    let node = child.layout(target: view)
+    target.yoga.isEnabled = true
 
-    view.addSubview(node)
+    let childNode = child.layout(target: target)
+
+    view.configureLayout { (layout) in
+
+      layout.paddingBottom = self.insets.yogaBottom
+      layout.paddingTop = self.insets.yogaTop
+      layout.paddingRight = self.insets.yogaRight
+      layout.paddingLeft = self.insets.yogaLeft
+
+      if layout.paddingLeft.value != YGValueAuto.value, layout.paddingRight.value != YGValueAuto.value {
+        childNode.style.flexGrow = 1
+        layout.justifyContent = .center
+      } else if layout.paddingRight.value != YGValueAuto.value {
+        childNode.style.flexGrow = 0
+        layout.justifyContent = .flexStart
+      } else {
+        childNode.style.flexGrow = 0
+        layout.justifyContent = .flexStart
+      }
+
+      if layout.paddingTop.value != YGValueAuto.value, layout.paddingBottom.value != YGValueAuto.value {
+        layout.alignItems = .stretch
+      } else if layout.paddingBottom.value != YGValueAuto.value {
+        layout.justifyContent = .flexEnd
+      } else {
+        layout.justifyContent = .flexStart
+      }
+    }
+
+    view.addSubview(childNode)
 
     return view
   }
 
 }
+

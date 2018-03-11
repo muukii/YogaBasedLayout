@@ -28,6 +28,8 @@
 		4BB64321205432EA007890BC /* WrapperLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D002051246600E6E0B7 /* WrapperLayoutSpec.swift */; };
 		4BB6432220543E28007890BC /* OverlayLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CFE2051242D00E6E0B7 /* OverlayLayoutSpec.swift */; };
 		4BB6432320544095007890BC /* BackgorundLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CFC2051242100E6E0B7 /* BackgorundLayoutSpec.swift */; };
+		4BB643252054698E007890BC /* RelativeLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CF620511FED00E6E0B7 /* RelativeLayoutSpec.swift */; };
+		4BB6432620546FFF007890BC /* CenterLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CFA2051240B00E6E0B7 /* CenterLayoutSpec.swift */; };
 		61321B1F52FDEB02306703C9 /* Pods_Mondrian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2ACA5553812A5ADB9D2B5E /* Pods_Mondrian.framework */; };
 		7335C42C73713E0DF2C7FC4E /* Pods_MondrianDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4373DFB5D04B3EA8606BE05A /* Pods_MondrianDemo.framework */; };
 /* End PBXBuildFile section */
@@ -417,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB643252054698E007890BC /* RelativeLayoutSpec.swift in Sources */,
 				4B28D5E32053A6250002841C /* UIView+Node.swift in Sources */,
 				4B386D05205124AB00E6E0B7 /* LayoutElement.swift in Sources */,
 				4B28D5E52053A6530002841C /* CALayer+LayoutElement.swift in Sources */,
@@ -427,6 +430,7 @@
 				4BB64321205432EA007890BC /* WrapperLayoutSpec.swift in Sources */,
 				4B386CF920511FF400E6E0B7 /* StackLayoutSpec.swift in Sources */,
 				4BB6432320544095007890BC /* BackgorundLayoutSpec.swift in Sources */,
+				4BB6432620546FFF007890BC /* CenterLayoutSpec.swift in Sources */,
 				4B99143C2053C0DD0034BB04 /* Mondrian.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

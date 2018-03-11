@@ -54,17 +54,22 @@ extension PlaygroundTextureViewController {
 
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
 
-      return ASStackLayoutSpec(
-        direction: .vertical,
-        spacing: 8,
-        justifyContent: .spaceBetween,
-        alignItems: .stretch,
-        children: boxes + [
-          ASWrapperLayoutSpec(layoutElement: ASTextNode().then {
-            $0.attributedText = NSAttributedString.init(string: "hoge")
-          })
-        ]
+
+      return
+        ASOverlayLayoutSpec(
+          child: ASStackLayoutSpec(
+            direction: .vertical,
+            spacing: 8,
+            justifyContent: .spaceBetween,
+            alignItems: .stretch,
+            children: boxes
+          ),
+          overlay: ASTextNode().then {
+            $0.attributedText = NSAttributedString.init(string: (0..<100).map { String($0) }.joined())
+            $0.style.flexGrow = 0
+          }
       )
+
     }
   }
 }

@@ -66,8 +66,6 @@ extension Node : LayoutElement {
 
   public final func layout(target: Node) -> Node {
 
-    mprint("Layout", self.yoga.isLeaf)
-
     yoga.isEnabled = true
 
     configureLayout { layout in
@@ -95,4 +93,16 @@ final class LayoutNode : UIView {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+
+  override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+
+    let view = super.hitTest(point, with: event)
+
+    if view == self {
+
+      return nil
+    }
+    return view
+  }
+
 }

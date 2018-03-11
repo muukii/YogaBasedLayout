@@ -10,8 +10,10 @@ import Foundation
 
 public protocol LayoutElement {
 
-//  var style: LayoutElementStyle { get }
-
+  /// Apply Layout-rule
+  ///
+  /// - Parameter target: Target
+  /// - Returns: Return new Node if itself create (??)
   func layout(target: Node) -> Node
 
 }

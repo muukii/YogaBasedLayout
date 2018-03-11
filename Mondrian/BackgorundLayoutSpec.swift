@@ -10,9 +10,7 @@ import Foundation
 
 import YogaKit
 
-public struct BackgroundLayoutSpec : LayoutSpecInternal {
-
-  let view: LayoutNode = .init()
+public struct BackgroundLayoutSpec : LayoutSpec {
 
   public let child: LayoutElement
 
@@ -27,13 +25,7 @@ public struct BackgroundLayoutSpec : LayoutSpecInternal {
 
     target.yoga.isEnabled = true
 
-    target.addSubview(view)
-
-    view.configureLayout { (layout) in
-      self.style.apply(to: layout)
-    }
-
-    let _background = background.layout(target: view)
+    let _background = background.layout(target: target)
 
     _background.configureLayout { (layout) in
       layout.position = .absolute
@@ -41,10 +33,10 @@ public struct BackgroundLayoutSpec : LayoutSpecInternal {
       layout.height = YGValue.init(value: 100, unit: .percent)
     }
 
-    view.addSubview(_background)
-    view.addSubview(child.layout(target: view))
+    target.addSubview(_background)
+    target.addSubview(child.layout(target: target))
 
-    return view
+    return target
   }
 
 }

@@ -10,9 +10,7 @@ import Foundation
 
 import YogaKit
 
-public struct OverlayLayoutSpec : LayoutSpecInternal {
-
-  let view: LayoutNode = .init()
+public struct OverlayLayoutSpec : LayoutSpec {
 
   public let child: LayoutElement
 
@@ -27,24 +25,18 @@ public struct OverlayLayoutSpec : LayoutSpecInternal {
 
     target.yoga.isEnabled = true
 
-    target.addSubview(view)
+    let overlayNode = overlay.layout(target: target)
 
-    view.configureLayout { (layout) in
-      self.style.apply(to: layout)
-    }
-
-    let _overlay = overlay.layout(target: view)
-
-    _overlay.configureLayout { (layout) in
+    overlayNode.configureLayout { (layout) in
       layout.position = .absolute
       layout.width = YGValue.init(value: 100, unit: .percent)
       layout.height = YGValue.init(value: 100, unit: .percent)
     }
 
-    view.addSubview(child.layout(target: view))
-    view.addSubview(_overlay)
+    let childNode = child.layout(target: target)
+    childNode.addSubview(overlayNode)
 
-    return view
+    return target
   }
 
 }

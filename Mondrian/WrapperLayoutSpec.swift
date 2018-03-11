@@ -10,9 +10,7 @@ import Foundation
 
 import YogaKit
 
-public struct WrapperLayoutSpec : LayoutSpecInternal {
-
-  let view = LayoutNode()
+public struct WrapperLayoutSpec : LayoutSpec {
 
   public let children: [LayoutElement]
 
@@ -28,29 +26,21 @@ public struct WrapperLayoutSpec : LayoutSpecInternal {
 
     target.yoga.isEnabled = true
 
-    target.addSubview(view)
-
-    view.configureLayout { (layout) in
-      self.style.apply(to: layout)
-    }
-
     let nodes = children.map {
-      $0.layout(target: view)
+      $0.layout(target: target)
     }
 
     nodes.forEach {
       $0.configureLayout { (layout) in
         layout.position = .absolute
-        layout.bottom = YGValue(CGFloat(0))
-        layout.top = YGValue(CGFloat(0))
-        layout.right = YGValue(CGFloat(0))
-        layout.left = YGValue(CGFloat(0))
+        layout.width = YGValue.init(value: 100, unit: .percent)
+        layout.height = YGValue.init(value: 100, unit: .percent)
       }
     }
 
-    nodes.forEach(view.addSubview)
+    nodes.forEach(target.addSubview)
 
-    return view
+    return target
   }
 
 }

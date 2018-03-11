@@ -65,6 +65,32 @@ extension ConstraintDimension where T == Min {
   }
 }
 
+extension UIEdgeInsets {
+
+  var yogaTop: YGValue {
+    return normalize(top)
+  }
+
+  var yogaBottom: YGValue {
+    return normalize(bottom)
+  }
+
+  var yogaLeft: YGValue {
+    return normalize(left)
+  }
+
+  var yogaRight: YGValue {
+    return normalize(right)
+  }
+
+  private func normalize(_ v: CGFloat) -> YGValue {
+    guard v.isFinite else {
+      return YGValue(CGFloat.greatestFiniteMagnitude)
+    }
+    return YGValue(v)
+  }
+}
+
 public struct LayoutElementStyle {
 
   public var width: AutoDimension = .auto
@@ -85,6 +111,7 @@ public struct LayoutElementStyle {
 
   public var flexShrink: CGFloat = 0
 
+  // should not be here
   public var margin: UIEdgeInsets = .zero
 
   func apply(to layout: YGLayout) {
@@ -100,10 +127,10 @@ public struct LayoutElementStyle {
     layout.flexGrow = flexGrow
     layout.flexShrink = flexShrink
 
-    layout.marginTop = YGValue(margin.top)
-    layout.marginRight = YGValue(margin.right)
-    layout.marginBottom = YGValue(margin.bottom)
-    layout.marginLeft = YGValue(margin.left)
+    layout.marginTop = margin.yogaTop
+    layout.marginRight = margin.yogaRight
+    layout.marginBottom = margin.yogaBottom
+    layout.marginLeft = margin.yogaLeft
   }
 
 }

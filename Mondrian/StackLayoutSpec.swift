@@ -151,9 +151,9 @@ extension FlexWrap {
 //  }
 //}
 
-public struct StackLayoutSpec : LayoutSpecInternal {
+public struct StackLayoutSpec : LayoutSpec {
 
-  let view = LayoutNode()
+  public var style: LayoutElementStyle = .init()
 
   public let direction: FlexDirection
 
@@ -187,12 +187,18 @@ public struct StackLayoutSpec : LayoutSpecInternal {
 
   public func layout(target: Node) -> Node {
 
-    target.yoga.isEnabled = true
+    // Can optimize
+    // Should reduce useless UIView
+
+    let view = LayoutNode()
+
+    view.style = style
 
     target.addSubview(view)
 
+    target.yoga.isEnabled = true
+
     view.configureLayout { (layout) in
-      self.style.apply(to: layout)
       layout.flexDirection = self.direction.yogaValue
       layout.justifyContent = self.justifyContent.yogaValue
       layout.alignItems = self.alignItems.yogaValue
@@ -200,11 +206,16 @@ public struct StackLayoutSpec : LayoutSpecInternal {
     }
 
     let nodes = children.map {
-      $0.layout(target: view)
+      $0.layout(target: target)
     }
 
     nodes.dropLast().forEach {
-      $0.style.margin.bottom = spacing
+      switch direction {
+      case .horizontal, .horizontalReverse:
+        $0.style.margin.right = spacing
+      case .vertical, .verticalReverse:
+        $0.style.margin.bottom = spacing
+      }
     }
 
     nodes.forEach(view.addSubview)
