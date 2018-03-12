@@ -45,13 +45,13 @@ public struct RelativeLayoutSpec : LayoutSpec {
     target.configureLayout { (layout) in
       layout.flexDirection = .column
 
-      node.style.flexGrow = 1
+      node.mond.style.flexGrow = 1
       layout.alignItems = .stretch
 
       switch self.sizing {
       case .minimumHeight(let verticalPosition):
 
-        node.style.flexGrow = 0
+        node.mond.style.flexGrow = 0
 
         switch verticalPosition {
         case .center:
@@ -75,7 +75,7 @@ public struct RelativeLayoutSpec : LayoutSpec {
 
       case .minimumSize(let verticalPosition, let horizontalPosition):
 
-        node.style.flexGrow = 0
+        node.mond.style.flexGrow = 0
 
         switch verticalPosition {
         case .center:

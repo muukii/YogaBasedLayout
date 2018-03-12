@@ -39,13 +39,13 @@ public struct InsetLayoutSpec : LayoutSpec {
       layout.paddingLeft = self.insets.yogaLeft
 
       if layout.paddingLeft.value != YGValueAuto.value, layout.paddingRight.value != YGValueAuto.value {
-        childNode.style.flexGrow = 1
+        childNode.mond.style.flexGrow = 1
         layout.justifyContent = .center
       } else if layout.paddingRight.value != YGValueAuto.value {
-        childNode.style.flexGrow = 0
+        childNode.mond.style.flexGrow = 0
         layout.justifyContent = .flexStart
       } else {
-        childNode.style.flexGrow = 0
+        childNode.mond.style.flexGrow = 0
         layout.justifyContent = .flexStart
       }
 

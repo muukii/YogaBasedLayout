@@ -20,14 +20,27 @@ public enum LayoutMode {
   case flexibleWidth
 }
 
+extension MondrianNamespace where Base : UIView {
+
+  public func styled(_ apply:(inout LayoutElementStyle) -> Void) -> Base {
+    apply(&style)
+    return base
+  }
+
+  public var style: LayoutElementStyle {
+    get {
+      return base.style
+    }
+    set {
+      base.style = newValue
+    }
+  }
+
+}
+
 extension Node {
 
-  public func styled(_ apply:(inout LayoutElementStyle) -> Void) -> Self {
-    apply(&style)
-    return self
-  }
-  
-  public var style: LayoutElementStyle {
+  fileprivate var style: LayoutElementStyle {
     get {
       if let style = objc_getAssociatedObject(self, &_style) as? LayoutElementStyle {
         return style
@@ -44,27 +57,6 @@ extension Node {
     }
   }
 
-  public func relayout(layoutMode: LayoutMode = .currentSize) {
-
-    yoga.isEnabled = true
-
-    switch layoutMode {
-    case .currentSize:
-      yoga.applyLayout(
-        preservingOrigin: true
-      )
-    case .flexibleHeight:
-      yoga.applyLayout(
-        preservingOrigin: true,
-        dimensionFlexibility: .flexibleHeight
-      )
-    case .flexibleWidth:
-      yoga.applyLayout(
-        preservingOrigin: true,
-        dimensionFlexibility: .flexibleWidth
-      )
-    }
-  }
 }
 
 extension Node : LayoutElement {

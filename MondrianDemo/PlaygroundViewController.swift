@@ -44,10 +44,10 @@ class PlaygroundViewController : UIViewController {
 
     self.view.addSubview(view)
 
-    view.style.width = .points(300)
-    view.style.height = .points(300)
+    view.mond.style.width = .points(300)
+    view.mond.style.height = .points(300)
 
-    view.relayout()
+    view.mond.relayout()
 
   }
 }
@@ -79,8 +79,8 @@ extension PlaygroundViewController {
       (boxes1 + boxes2)
         .forEach {
           $0.backgroundColor = UIColor.init(white: 0.9, alpha: 1)
-          $0.style.height = .points(30)
-          $0.style.width = .points(30)
+          $0.mond.style.height = .points(30)
+          $0.mond.style.width = .points(30)
       }
 
     }

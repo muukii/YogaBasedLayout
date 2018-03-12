@@ -111,6 +111,8 @@ public struct LayoutElementStyle {
 
   public var flexShrink: CGFloat = 0
 
+  public var isIncludedInLayout: Bool = true
+
   // should not be here
   public var margin: UIEdgeInsets = .zero
 
@@ -131,6 +133,8 @@ public struct LayoutElementStyle {
     layout.marginRight = margin.yogaRight
     layout.marginBottom = margin.yogaBottom
     layout.marginLeft = margin.yogaLeft
+
+    layout.isIncludedInLayout = isIncludedInLayout
   }
 
 }

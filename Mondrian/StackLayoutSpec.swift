@@ -194,7 +194,7 @@ public struct StackLayoutSpec : LayoutSpec {
 
     let view = LayoutNode()
 
-    view.style = style
+    view.mond.style = style
 
     target.addSubview(view)
 
@@ -214,9 +214,9 @@ public struct StackLayoutSpec : LayoutSpec {
     nodes.dropLast().forEach {
       switch direction {
       case .horizontal, .horizontalReverse:
-        $0.style.margin.right = spacing
+        $0.mond.style.margin.right = spacing
       case .vertical, .verticalReverse:
-        $0.style.margin.bottom = spacing
+        $0.mond.style.margin.bottom = spacing
       }
     }
 

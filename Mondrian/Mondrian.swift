@@ -15,3 +15,23 @@ func mprint(_ items: Any...) {
     print(items.map { "\($0)" }.joined(separator: " "))
   #endif
 }
+
+public final class MondrianNamespace<Base> {
+  public let base: Base
+  public init(_ base: Base) {
+    self.base = base
+  }
+}
+
+public protocol MondrianCompatible {
+  associatedtype CompatibleType
+  var mond: CompatibleType { get }
+}
+
+public extension MondrianCompatible {
+  public var mond: MondrianNamespace<Self> {
+    get { return MondrianNamespace(self) }
+  }
+}
+
+extension UIView : MondrianCompatible {}

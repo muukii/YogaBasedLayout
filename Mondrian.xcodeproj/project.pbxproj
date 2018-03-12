@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		4B1154722053D4FB000D34CC /* InsetLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CF220511FD700E6E0B7 /* InsetLayoutSpec.swift */; };
 		4B28D5E32053A6250002841C /* UIView+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28D5E22053A6250002841C /* UIView+Node.swift */; };
-		4B28D5E52053A6530002841C /* CALayer+LayoutElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28D5E42053A6530002841C /* CALayer+LayoutElement.swift */; };
 		4B386CEC20511FB600E6E0B7 /* Mondrian.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B386CEA20511FB600E6E0B7 /* Mondrian.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B386CF920511FF400E6E0B7 /* StackLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CF820511FF400E6E0B7 /* StackLayoutSpec.swift */; };
 		4B386D032051247300E6E0B7 /* LayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D022051247300E6E0B7 /* LayoutSpec.swift */; };
 		4B386D05205124AB00E6E0B7 /* LayoutElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D04205124AB00E6E0B7 /* LayoutElement.swift */; };
 		4B386D072051532100E6E0B7 /* LayoutElementStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D062051532100E6E0B7 /* LayoutElementStyle.swift */; };
+		4B3927272056F2C300B5E99D /* SwitchComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3927262056F2C300B5E99D /* SwitchComponentViewController.swift */; };
 		4B936C182053C54900D1F203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B936C172053C54900D1F203 /* AppDelegate.swift */; };
 		4B936C1A2053C54A00D1F203 /* ProfileCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */; };
 		4B936C1D2053C54A00D1F203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B936C1B2053C54A00D1F203 /* Main.storyboard */; };
@@ -64,7 +64,6 @@
 		1AC3CF865FCA08D16CD16A25 /* Pods-Mondrian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mondrian.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mondrian/Pods-Mondrian.release.xcconfig"; sourceTree = "<group>"; };
 		4373DFB5D04B3EA8606BE05A /* Pods_MondrianDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MondrianDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B28D5E22053A6250002841C /* UIView+Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Node.swift"; sourceTree = "<group>"; };
-		4B28D5E42053A6530002841C /* CALayer+LayoutElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+LayoutElement.swift"; sourceTree = "<group>"; };
 		4B28D5E62053A6C70002841C /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4B386CE720511FB600E6E0B7 /* Mondrian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mondrian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B386CEA20511FB600E6E0B7 /* Mondrian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mondrian.h; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		4B386D022051247300E6E0B7 /* LayoutSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSpec.swift; sourceTree = "<group>"; };
 		4B386D04205124AB00E6E0B7 /* LayoutElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutElement.swift; sourceTree = "<group>"; };
 		4B386D062051532100E6E0B7 /* LayoutElementStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutElementStyle.swift; sourceTree = "<group>"; };
+		4B3927262056F2C300B5E99D /* SwitchComponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchComponentViewController.swift; sourceTree = "<group>"; };
 		4B936C152053C54900D1F203 /* MondrianDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MondrianDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B936C172053C54900D1F203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +174,6 @@
 				4BDE082E205561120035F74F /* EntryPoint.swift */,
 				4BB643272055580A007890BC /* MondrianView.swift */,
 				4B28D5E22053A6250002841C /* UIView+Node.swift */,
-				4B28D5E42053A6530002841C /* CALayer+LayoutElement.swift */,
 			);
 			path = Mondrian;
 			sourceTree = "<group>";
@@ -195,6 +194,7 @@
 				4BB6431D20542A84007890BC /* PlaygroundViewController.swift */,
 				4BB6431F20542A8E007890BC /* PlaygroundTextureViewController.swift */,
 				4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */,
+				4B3927262056F2C300B5E99D /* SwitchComponentViewController.swift */,
 				4B936C1B2053C54A00D1F203 /* Main.storyboard */,
 				4B936C1E2053C54A00D1F203 /* Assets.xcassets */,
 				4B936C202053C54A00D1F203 /* LaunchScreen.storyboard */,
@@ -429,7 +429,6 @@
 				4BDE082F205561120035F74F /* EntryPoint.swift in Sources */,
 				4B28D5E32053A6250002841C /* UIView+Node.swift in Sources */,
 				4B386D05205124AB00E6E0B7 /* LayoutElement.swift in Sources */,
-				4B28D5E52053A6530002841C /* CALayer+LayoutElement.swift in Sources */,
 				4B386D032051247300E6E0B7 /* LayoutSpec.swift in Sources */,
 				4B1154722053D4FB000D34CC /* InsetLayoutSpec.swift in Sources */,
 				4BB643282055580A007890BC /* MondrianView.swift in Sources */,
@@ -449,6 +448,7 @@
 			files = (
 				4B936C1A2053C54A00D1F203 /* ProfileCardViewController.swift in Sources */,
 				4BB6432020542A8E007890BC /* PlaygroundTextureViewController.swift in Sources */,
+				4B3927272056F2C300B5E99D /* SwitchComponentViewController.swift in Sources */,
 				4B936C182053C54900D1F203 /* AppDelegate.swift in Sources */,
 				4BB6431E20542A84007890BC /* PlaygroundViewController.swift in Sources */,
 			);

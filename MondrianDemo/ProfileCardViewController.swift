@@ -121,7 +121,7 @@ extension ProfileCardViewController {
 
       imageView.backgroundColor = UIColor.init(white: 0.9, alpha: 1)
 
-      applyLayoutSpec()
+      mond.applyLayoutSpec()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -131,7 +131,7 @@ extension ProfileCardViewController {
     override func layoutSubviews() {
       super.layoutSubviews()
 
-      relayout()
+      mond.relayout()
 
       imageView.layer.cornerRadius = imageView.bounds.width / 2
       imageView.layer.masksToBounds = true
@@ -140,10 +140,10 @@ extension ProfileCardViewController {
     func size(maxWidth: CGFloat?) -> CGSize {
 
       if let maxWidth = maxWidth {
-        style.width = .points(maxWidth)
+        mond.style.width = .points(maxWidth)
       }
 
-      relayout(layoutMode: .flexibleHeight)
+      mond.relayout(layoutMode: .flexibleHeight)
 
       let size = self.bounds.size
       return size
@@ -167,7 +167,7 @@ extension ProfileCardViewController {
 
               // image
 
-              imageView.styled { (style) in
+              imageView.mond.styled { (style) in
                 style.width = .points(60)
                 style.height = .points(60)
               },
