@@ -57,6 +57,24 @@ extension Node {
     }
   }
 
+  func makeLayoutNode<T: LayoutNode>(for type: T.Type) -> T {
+    let view = T.init()
+    self.addSubview(view)
+    return view
+  }
+
+  func set(children: [UIView]) {
+
+    subviews.forEach {
+      $0.removeFromSuperview()
+    }
+
+    children.forEach {
+      addSubview($0)
+    }
+
+  }
+
 }
 
 extension Node : LayoutElement {
@@ -80,7 +98,7 @@ extension Node : LayoutElement {
   
 }
 
-final class LayoutNode : UIView {
+class LayoutNode : UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -101,5 +119,8 @@ final class LayoutNode : UIView {
     }
     return view
   }
+}
+
+class StackLayoutNode : LayoutNode {
 
 }

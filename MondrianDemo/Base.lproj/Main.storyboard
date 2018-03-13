@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="1694" y="-61"/>
         </scene>
-        <!--Profile Card View Controller-->
+        <!--Switch Component View Controller-->
         <scene sceneID="XgZ-Ap-6fF">
             <objects>
-                <viewController id="5f1-nA-bAx" customClass="ProfileCardViewController" customModule="MondrianDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5f1-nA-bAx" customClass="SwitchComponentViewController" customModule="MondrianDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cF4-D7-PAN"/>
                         <viewControllerLayoutGuide type="bottom" id="ayS-pW-eAp"/>

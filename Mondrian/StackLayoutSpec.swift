@@ -192,11 +192,9 @@ public struct StackLayoutSpec : LayoutSpec {
     // Can optimize
     // Should reduce useless UIView
 
-    let view = LayoutNode()
+    let view = target.makeLayoutNode(for: StackLayoutNode.self)
 
     view.mond.style = style
-
-    target.addSubview(view)
 
     target.yoga.isEnabled = true
 
@@ -208,7 +206,16 @@ public struct StackLayoutSpec : LayoutSpec {
     }
 
     let nodes = children.map {
-      $0.defineLayout(target: target)
+      $0.defineLayout(target: view)
+    }
+
+    nodes.forEach {
+      switch direction {
+      case .horizontal, .horizontalReverse:
+        $0.mond.style.margin.right = 0
+      case .vertical, .verticalReverse:
+        $0.mond.style.margin.bottom = 0
+      }
     }
 
     nodes.dropLast().forEach {
@@ -220,7 +227,7 @@ public struct StackLayoutSpec : LayoutSpec {
       }
     }
 
-    nodes.forEach(view.addSubview)
+    view.set(children: nodes)
 
     return view
 

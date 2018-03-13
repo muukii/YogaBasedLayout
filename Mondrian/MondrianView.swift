@@ -19,7 +19,7 @@ extension MondrianNamespace where Base : UIView & MondrianViewType {
     _ = base.defineLayout(target: base)
   }
 
-  public func setNeedsRefreshLayoutSpec() {
+  public func invalidateLayoutSpec() {
     // TODO: Optimize
     destroyCurrentLayoutSpec()
     applyLayoutSpec()
@@ -49,14 +49,40 @@ extension MondrianNamespace where Base : UIView & MondrianViewType {
 
   private func destroyCurrentLayoutSpec() {
 
-    base.subviews.forEach {
-      $0.removeFromSuperview()
+    var nodes: [UIView] = []
+
+    func recursive(root: UIView) {
+      for child in root.subviews {
+        if child is LayoutNode {
+          nodes.append(child)
+        }
+        recursive(root: child)
+      }
     }
+
+    recursive(root: base)
+
+    for node in nodes {
+      node.subviews.forEach {
+        $0.removeFromSuperview()
+      }
+      node.yoga.calculateLayout(with: .zero) // To remove child node
+      node.removeFromSuperview()
+    }
+
   }
 
 }
 
 open class MondrianView : UIView, MondrianViewType {
+
+  open override func didMoveToSuperview() {
+    super.didMoveToSuperview()
+
+    if superview != nil {
+      mond.applyLayoutSpec()
+    }
+  }
 
   open override func layoutSubviews() {
     super.layoutSubviews()    
@@ -64,6 +90,15 @@ open class MondrianView : UIView, MondrianViewType {
 
   open func layoutSpec() -> LayoutSpec {
     return WrapperLayoutSpec(child: self)
+  }
+
+  public override init(frame: CGRect) {
+    super.init(frame: frame)
+  }
+
+  @available(*, unavailable)
+  public required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
 }
