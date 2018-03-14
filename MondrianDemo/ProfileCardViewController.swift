@@ -121,7 +121,7 @@ extension ProfileCardViewController {
 
       imageView.backgroundColor = UIColor.init(white: 0.9, alpha: 1)
 
-      mond.applyLayoutSpec()
+      mond.invalidateLayoutSpec()
     }
 
     required init?(coder aDecoder: NSCoder) {

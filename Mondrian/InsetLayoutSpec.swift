@@ -23,13 +23,11 @@ public struct InsetLayoutSpec : LayoutSpec {
 
   public func defineLayout(target: Node) -> Node {
 
-    let view = LayoutNode()
-
-    target.addSubview(view)
+    let view = target.makeLayoutNode(for: LayoutNode.self)
 
     target.yoga.isEnabled = true
 
-    let childNode = child.defineLayout(target: target)
+    let childNode = child.defineLayout(target: view)
 
     view.configureLayout { (layout) in
 

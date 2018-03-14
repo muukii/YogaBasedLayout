@@ -148,6 +148,14 @@ extension PlaygroundViewController {
         )
       )
 
+      return InsetLayoutSpec(
+        insets: .init(top: 16, left: 16, bottom: 16, right: 16),
+        child: UILabel().then {
+          $0.numberOfLines = 0
+          $0.text = (0..<100).map { String($0) }.joined()
+        }
+      )
+
 //      var spec = OverlayLayoutSpec(
 //        child: stack,
 //        overlay: UILabel().then {
