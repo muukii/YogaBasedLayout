@@ -79,6 +79,18 @@ view.sizeToFit()
 - WrapperLayoutSpec
 - EntryPoint
 
+### Update layout (add or remove or resize subviews)
+
+// TODO:
+
+### Calculate view size (for UICollectionView | UITableView)
+
+// TODO:
+
+## Performance
+
+// TODO:
+
 ## Installation
 
 // TODO:
