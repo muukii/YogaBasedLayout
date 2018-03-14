@@ -8,9 +8,10 @@
 
 import Foundation
 
-public struct RatioLayoutSpec : LayoutSpec, LayoutElement {
+//public struct RatioLayoutSpec : LayoutSpec, LayoutElement {
+//
+//  public init(ratio: CGFloat, child: LayoutElement) {
+//
+//  }
+//}
 
-  public init(ratio: CGFloat, child: LayoutElement) {
-
-  }
-}
