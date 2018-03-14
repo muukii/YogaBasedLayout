@@ -1,6 +1,6 @@
 # Mondrian
 
-Mondrian provides the layout interface like TetureGroup/Texture with high-optimized layout engine facebook/yoga flexbox implementation.
+Mondrian provides the layout interface like TextureGroup/Texture with high-optimized layout engine facebook/yoga flexbox implementation.
 
 ## Requirements
 
@@ -9,7 +9,7 @@ Mondrian provides the layout interface like TetureGroup/Texture with high-optimi
 
 ## Introduction Examples
 
-Mondrian has layout interface like [TetureGroup/Texture](http://texturegroup.org/docs/layout2-quickstart.html).
+Mondrian has layout interface like [TextureGroup/Texture](http://texturegroup.org/docs/layout2-quickstart.html).
 
 This interface makes view-structure easy to see.
 It projects view-tree like the actual tree of UIView as code.
