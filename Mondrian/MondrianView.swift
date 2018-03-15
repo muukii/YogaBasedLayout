@@ -38,11 +38,11 @@ extension MondrianNamespace where Base : UIView & MondrianViewType {
     applyLayoutSpec()
   }
 
-  public func relayout(layoutMode: LayoutMode = .currentSize) {
+  public func layout(mode: LayoutMode = .currentSize) {
 
     base.targetView.yoga.isEnabled = true
 
-    switch layoutMode {
+    switch mode {
     case .currentSize:
       base.targetView.yoga.applyLayout(
         preservingOrigin: true
@@ -140,7 +140,7 @@ open class MondrianView : UIView, MondrianViewType {
   open override func sizeToFit() {
     mond.invalidateLayoutSpec()
     bounds.size = yoga.intrinsicSize
-    mond.relayout()
+    mond.layout()
   }
 
 }

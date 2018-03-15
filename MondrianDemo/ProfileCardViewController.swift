@@ -135,7 +135,7 @@ extension ProfileCardViewController {
     override func layoutSubviews() {
       super.layoutSubviews()
 
-      mond.relayout()
+      mond.layout()
 
       imageView.layer.cornerRadius = imageView.bounds.width / 2
       imageView.layer.masksToBounds = true

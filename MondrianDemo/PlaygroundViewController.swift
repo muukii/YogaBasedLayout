@@ -46,7 +46,7 @@ class PlaygroundViewController : UIViewController {
     view.mond.style.height = .points(300)
     view.mond.invalidateLayoutSpec()
 
-    view.mond.relayout()
+    view.mond.layout()
 
   }
 }

@@ -22,7 +22,7 @@ final class SwitchComponentViewController : UIViewController {
     customView.frame.origin.y = 120
     customView.mond.style.width = .points(320)
     customView.mond.invalidateLayoutSpec()
-    customView.mond.relayout(layoutMode: .flexibleHeight)
+    customView.mond.layout(mode: .flexibleHeight)
   }
 }
 
@@ -77,7 +77,7 @@ extension SwitchComponentViewController {
     private func toggle() {
       isOn = !isOn
       mond.invalidateLayoutSpec()
-      mond.relayout(layoutMode: .flexibleHeight)
+      mond.layout(mode: .flexibleHeight)
     }
   }
 }

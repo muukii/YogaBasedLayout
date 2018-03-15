@@ -17,7 +17,7 @@ It projects view-tree like the actual tree of UIView as code.
 In easy use, We can make sub-class of `MondrianView`
 `MondrianView` has some functions for control-flow layout.
 
-(If we can't make sub-class of `MondrianView`, we can use `MondrianViewType` protocol.)
+(If we can't make sub-class of `MondrianView`, we can use `MondrianViewType` protocol that `MondrianView` has.)
 
 ```swift
 class MyView : MondrianView {
@@ -77,7 +77,6 @@ view.sizeToFit()
 - BackgroundLayoutSpec
 - OverlayLayoutSpec
 - WrapperLayoutSpec
-- EntryPoint
 
 ### Update layout (add or remove or resize subviews)
 
@@ -85,7 +84,48 @@ view.sizeToFit()
 
 ### Calculate view size (for UICollectionView | UITableView)
 
-// TODO:
+`MondrianViewType` has `calculateSize(with rule: CalculateRule) -> CGSize`
+
+Example for UICollectionView
+
+```swift
+
+// for sizing cell
+let sizingCell: MyCell = .init(frame: .zero)
+
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+  let size = sizingCell.mond.calculateSize(with: .fixedWidth(collectionView.bounds.width))
+
+  return size
+
+}
+```
+
+In Cell class
+
+```swift
+final class MyCell : UICollectionViewCell, MondrianViewType {
+
+  var targetView: UIView {
+    // Specify target view that applies layout.
+    // LayoutSpec from this class applies layout from contentView.
+    return contentView
+  }
+
+  ...
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+
+    mond.layout()
+  }
+
+  func layoutSpec() -> LayoutSpec {
+    return ...
+  }
+}
+```
 
 ## Performance
 
