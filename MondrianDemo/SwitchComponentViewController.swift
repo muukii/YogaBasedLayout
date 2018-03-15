@@ -21,7 +21,7 @@ final class SwitchComponentViewController : UIViewController {
 
     customView.frame.origin.y = 120
     customView.mond.style.width = .points(320)
-
+    customView.mond.invalidateLayoutSpec()
     customView.mond.relayout(layoutMode: .flexibleHeight)
   }
 }

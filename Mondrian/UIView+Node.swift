@@ -36,6 +36,10 @@ extension MondrianNamespace where Base : UIView {
     }
   }
 
+  public func markDirty() {
+    base.yoga.markDirty()
+  }
+
 }
 
 extension Node {
@@ -89,7 +93,7 @@ extension Node : LayoutElement {
 
     if let spec = (self as? UIView & MondrianViewType)?.layoutSpec() {
 
-      return spec.defineLayout(target: self)
+      return spec.defineLayout(target: target)
 
     } else {
       return self

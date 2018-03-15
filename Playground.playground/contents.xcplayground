@@ -3,5 +3,6 @@
     <pages>
         <page name='Basic Sample'/>
         <page name='Untitled Page'/>
+        <page name='Ratio Sample'/>
     </pages>
 </playground>

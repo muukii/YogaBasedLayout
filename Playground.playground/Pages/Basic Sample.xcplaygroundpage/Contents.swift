@@ -15,6 +15,8 @@ class MyView : MondrianView {
     backgroundColor = .white
     titleLabel.text = "Book Title"
     detailLabel.text = "Boot detail"
+    titleLabel.numberOfLines = 0
+    detailLabel.numberOfLines = 0
 
   }
 
@@ -44,7 +46,13 @@ class MyView : MondrianView {
 let view = MyView()
 view.sizeToFit()
 
-print(view.subviews[0].subviews[0].subviews)
+view.sizeToFit()
+
+//view.mond.style.width = .points(50)
+//view.mond.style.height = .points(2000)
+
+view.yoga.intrinsicSize
+view.mond.calculateSize(with: .fixedWidth(60))
 
 PlaygroundPage.current.liveView = view
 

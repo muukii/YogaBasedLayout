@@ -10,13 +10,26 @@ import UIKit
 
 public protocol MondrianViewType {
 
+  var targetView: UIView { get }
   func layoutSpec() -> LayoutSpec
+}
+
+extension MondrianViewType where Self : UIView {
+
+  public var targetView: UIView { return self }
+
+}
+
+public enum CalculateRule {
+  case none
+  case fixedWidth(CGFloat)
+  case fixedHeight(CGFloat)
 }
 
 extension MondrianNamespace where Base : UIView & MondrianViewType {
 
   func applyLayoutSpec() {
-    _ = base.defineLayout(target: base)
+    _ = base.defineLayout(target: base.targetView)
   }
 
   public func invalidateLayoutSpec() {
@@ -27,24 +40,50 @@ extension MondrianNamespace where Base : UIView & MondrianViewType {
 
   public func relayout(layoutMode: LayoutMode = .currentSize) {
 
-    base.yoga.isEnabled = true
+    base.targetView.yoga.isEnabled = true
 
     switch layoutMode {
     case .currentSize:
-      base.yoga.applyLayout(
+      base.targetView.yoga.applyLayout(
         preservingOrigin: true
       )
     case .flexibleHeight:
-      base.yoga.applyLayout(
+      base.targetView.yoga.applyLayout(
         preservingOrigin: true,
         dimensionFlexibility: .flexibleHeight
       )
     case .flexibleWidth:
-      base.yoga.applyLayout(
+      base.targetView.yoga.applyLayout(
         preservingOrigin: true,
         dimensionFlexibility: .flexibleWidth
       )
     }
+  }
+
+  public func calculateSize(with rule: CalculateRule) -> CGSize {
+
+    let _width = base.targetView.mond.style.width
+    let _height = base.targetView.mond.style.height
+
+    defer {
+      base.targetView.mond.style.width = _width
+      base.targetView.mond.style.height = _height
+    }
+
+    switch rule {
+    case .fixedHeight(let height):
+      base.targetView.mond.style.width = .auto
+      base.targetView.mond.style.height = .points(height)
+    case .fixedWidth(let width):
+      base.targetView.mond.style.height = .auto
+      base.targetView.mond.style.width = .points(width)
+    case .none:
+      base.targetView.mond.style.width = .auto
+      base.targetView.mond.style.height = .auto
+    }
+
+    return base.targetView.yoga.intrinsicSize
+
   }
 
   private func destroyCurrentLayoutSpec() {

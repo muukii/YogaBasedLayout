@@ -57,7 +57,7 @@ class ProfileCardViewController: UIViewController, UICollectionViewDataSource, U
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-    let size = sizingCell.size(maxWidth: collectionView.bounds.width)
+    let size = sizingCell.mond.calculateSize(with: .fixedWidth(collectionView.bounds.width))
 
     return size
 
@@ -67,6 +67,10 @@ class ProfileCardViewController: UIViewController, UICollectionViewDataSource, U
 extension ProfileCardViewController {
 
   private final class ProfileCell : UICollectionViewCell, MondrianViewType {
+
+    var targetView: UIView {
+      return contentView
+    }
 
     private let imageView: UIView = .init()
 
@@ -135,18 +139,6 @@ extension ProfileCardViewController {
 
       imageView.layer.cornerRadius = imageView.bounds.width / 2
       imageView.layer.masksToBounds = true
-    }
-
-    func size(maxWidth: CGFloat?) -> CGSize {
-
-      if let maxWidth = maxWidth {
-        mond.style.width = .points(maxWidth)
-      }
-
-      mond.relayout(layoutMode: .flexibleHeight)
-
-      let size = self.bounds.size
-      return size
     }
 
     func layoutSpec() -> LayoutSpec {
@@ -275,11 +267,8 @@ extension ProfileCardViewController {
         ]
       )
 
+      return InsetLayoutSpec.init(insets: .init(top: 16, left: 16, bottom: 16, right: 16), child: wrapper)
 
-      return EntryPoint(
-        rootView: contentView,
-        child: InsetLayoutSpec.init(insets: .init(top: 16, left: 16, bottom: 16, right: 16), child: wrapper)
-      )
     }
 
   }

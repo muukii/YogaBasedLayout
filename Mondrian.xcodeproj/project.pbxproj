@@ -15,6 +15,8 @@
 		4B386D05205124AB00E6E0B7 /* LayoutElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D04205124AB00E6E0B7 /* LayoutElement.swift */; };
 		4B386D072051532100E6E0B7 /* LayoutElementStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386D062051532100E6E0B7 /* LayoutElementStyle.swift */; };
 		4B3927272056F2C300B5E99D /* SwitchComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3927262056F2C300B5E99D /* SwitchComponentViewController.swift */; };
+		4B588575205ADDDD001454B2 /* RatioLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B386CF420511FE500E6E0B7 /* RatioLayoutSpec.swift */; };
+		4B588577205ADFED001454B2 /* RatioSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B588576205ADFED001454B2 /* RatioSampleViewController.swift */; };
 		4B936C182053C54900D1F203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B936C172053C54900D1F203 /* AppDelegate.swift */; };
 		4B936C1A2053C54A00D1F203 /* ProfileCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */; };
 		4B936C1D2053C54A00D1F203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B936C1B2053C54A00D1F203 /* Main.storyboard */; };
@@ -81,6 +83,7 @@
 		4B386D04205124AB00E6E0B7 /* LayoutElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutElement.swift; sourceTree = "<group>"; };
 		4B386D062051532100E6E0B7 /* LayoutElementStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutElementStyle.swift; sourceTree = "<group>"; };
 		4B3927262056F2C300B5E99D /* SwitchComponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchComponentViewController.swift; sourceTree = "<group>"; };
+		4B588576205ADFED001454B2 /* RatioSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioSampleViewController.swift; sourceTree = "<group>"; };
 		4B936C152053C54900D1F203 /* MondrianDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MondrianDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B936C172053C54900D1F203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 				4BB6431F20542A8E007890BC /* PlaygroundTextureViewController.swift */,
 				4B936C192053C54A00D1F203 /* ProfileCardViewController.swift */,
 				4B3927262056F2C300B5E99D /* SwitchComponentViewController.swift */,
+				4B588576205ADFED001454B2 /* RatioSampleViewController.swift */,
 				4B936C1B2053C54A00D1F203 /* Main.storyboard */,
 				4B936C1E2053C54A00D1F203 /* Assets.xcassets */,
 				4B936C202053C54A00D1F203 /* LaunchScreen.storyboard */,
@@ -432,6 +436,7 @@
 				4BDE082F205561120035F74F /* EntryPoint.swift in Sources */,
 				4B28D5E32053A6250002841C /* UIView+Node.swift in Sources */,
 				4B386D05205124AB00E6E0B7 /* LayoutElement.swift in Sources */,
+				4B588575205ADDDD001454B2 /* RatioLayoutSpec.swift in Sources */,
 				4B386D032051247300E6E0B7 /* LayoutSpec.swift in Sources */,
 				4B1154722053D4FB000D34CC /* InsetLayoutSpec.swift in Sources */,
 				4BB643282055580A007890BC /* MondrianView.swift in Sources */,
@@ -450,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B936C1A2053C54A00D1F203 /* ProfileCardViewController.swift in Sources */,
+				4B588577205ADFED001454B2 /* RatioSampleViewController.swift in Sources */,
 				4BC4CCAA2059825E00BFEABB /* StackSampleViewController.swift in Sources */,
 				4BB6432020542A8E007890BC /* PlaygroundTextureViewController.swift in Sources */,
 				4B3927272056F2C300B5E99D /* SwitchComponentViewController.swift in Sources */,

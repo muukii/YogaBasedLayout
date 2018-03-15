@@ -40,12 +40,11 @@ class PlaygroundViewController : UIViewController {
     view.frame.origin.y = 100
     view.frame.size = .init(width: 300, height: 300)
 
-    view.defineLayout(target: view)
-
     self.view.addSubview(view)
 
     view.mond.style.width = .points(300)
     view.mond.style.height = .points(300)
+    view.mond.invalidateLayoutSpec()
 
     view.mond.relayout()
 
@@ -148,13 +147,13 @@ extension PlaygroundViewController {
         )
       )
 
-      return InsetLayoutSpec(
-        insets: .init(top: 16, left: 16, bottom: 16, right: 16),
-        child: UILabel().then {
-          $0.numberOfLines = 0
-          $0.text = (0..<100).map { String($0) }.joined()
-        }
-      )
+//      return InsetLayoutSpec(
+//        insets: .init(top: 16, left: 16, bottom: 16, right: 16),
+//        child: UILabel().then {
+//          $0.numberOfLines = 0
+//          $0.text = (0..<100).map { String($0) }.joined()
+//        }
+//      )
 
 //      var spec = OverlayLayoutSpec(
 //        child: stack,
